@@ -13,8 +13,12 @@ function newQuote() {
 
     //to return a random quote index
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
-    //to check if it works
-    console.log(quote);
+    
+    //to populate the quote text div with the random quote
+    quoteText.textContent = quote.text;
+
+    //to populate the quote author div with the author's name
+    authorText.textContent = quote.author;
 }
 
 //to get quotes from API 
