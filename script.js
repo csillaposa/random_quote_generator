@@ -5,8 +5,23 @@ const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 
+//loader
+const loader = document.getElementById('loader');
+
 //to set up the quote array for the json object
 let apiQuotes = [];
+
+//to show loading we have to show the loader and hide the quote container
+function loading() {
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
+
+//hide loading
+function complete() {
+    loader.hidden = true;
+    quoteContainer.hidden = false;
+}
 
 //function to show new quote
 function newQuote() {
@@ -67,4 +82,7 @@ newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 
 //on load
-getQuotes();
+//getQuotes();
+
+//to check loader
+loading();
