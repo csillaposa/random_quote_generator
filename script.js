@@ -13,7 +13,8 @@ async function getQuotes() {
         const response = await fetch(apiUrl);
         //to populate the empty array with the json object
         apiQuotes = await response.json();
-        console.log(apiQuotes);
+        //to get one specific quote, not all of them, we use an index number
+        console.log(apiQuotes[13]);
     } catch (error) {
         //this is where we can handle the error
     }
