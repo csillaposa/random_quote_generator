@@ -50,5 +50,17 @@ async function getQuotes() {
     }
 }
 
+//to tweet a quote: https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/guides/web-intent
+function tweetQuote() {
+
+    //template string uses backticks
+    //we are using a template string becuse we can pass in a variable
+    //? is a query and we are passing in the quote text and author
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
+    
+    //to open the twitter page in a new tab
+    window.open(twitterUrl, '_blank');
+}
+
 //on load
 getQuotes();
