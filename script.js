@@ -17,8 +17,13 @@ function newQuote() {
     //to populate the quote text div with the random quote
     quoteText.textContent = quote.text;
 
-    //to populate the quote author div with the author's name
-    authorText.textContent = quote.author;
+    //to check if author is null
+    if (!quote.author) {
+        authorText.textContent = "Unknown";
+    } else {
+        //to populate the quote author div with the author's name
+        authorText.textContent = quote.author;
+    }
 }
 
 //to get quotes from API 
