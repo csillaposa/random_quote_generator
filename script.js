@@ -14,6 +14,12 @@ function newQuote() {
     //to return a random quote index
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     
+    //to check the quote length and apply styling for longer quotes
+    if (quote.text.length > 120) {
+        quoteText.classList.add('long-quote');
+    } else {
+        quoteText.classList.remove('long-quote');
+    }
     //to populate the quote text div with the random quote
     quoteText.textContent = quote.text;
 

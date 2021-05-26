@@ -28,6 +28,11 @@ body {
     font-weight: 400;
 }
 
+/* if the quote text is longer */
+.long-quote {
+    font-size: 2rem;
+}
+
 .quote-author {
     margin-top: 25px;
     font-size: 1.75rem;
