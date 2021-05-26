@@ -26,6 +26,9 @@ function complete() {
 //function to show new quote
 function newQuote() {
 
+    //we add the loader here too, because when we are pressing the button we bypass getQuotes()
+    loading();
+
     //to return a random quote index
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     
@@ -45,12 +48,18 @@ function newQuote() {
         //to populate the quote author div with the author's name
         authorText.textContent = quote.author;
     }
+
+    //set quote, hide loader
+    complete();
 }
 
 //to get quotes from API 
 //async makes a function return a promise
 //promise contains a response object
 async function getQuotes() {
+
+    //we call the loader here
+    loading();
 
     const apiUrl = 'https://type.fit/api/quotes';
 
@@ -82,7 +91,4 @@ newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 
 //on load
-//getQuotes();
-
-//to check loader
-loading();
+getQuotes();
